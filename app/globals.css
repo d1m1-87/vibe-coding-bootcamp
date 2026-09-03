@@ -44,6 +44,42 @@ body {
   padding: 0.1em 0;
 }
 
+/* ── Aufsteigende Raketen ── */
+
+.rocket-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rocket {
+  position: absolute;
+  bottom: -10%;
+  opacity: 0;
+  animation-name: rocket-rise;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rocket-rise {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(var(--drift), -120vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
 /* ── Akzentlinie ── */
 
 .accent-bar {
